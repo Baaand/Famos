@@ -1,0 +1,10 @@
+KOMM ** Berechnung der Länge des Oszillograms
+tanfang =POSI(Strom,Imax*0.01)
+punk=LANG?(strom)
+abzeit=XDEL?(strom)
+te=punk*abzeit
+
+KOMM ** Geändert in V1.1: Es wird der Y-Offset entfernt (dieser wird gemittelt aus den ersten 2% der x-Achse)
+kur_offset=GREN(Strom, 0, 0.02*te)
+yoff=Mitte(kur_offset)
+Strom=Strom-yoff
